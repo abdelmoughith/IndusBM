@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray">
     <RelativeLayout
         android:alpha="1"
         android:layout_width="match_parent"
@@ -69,37 +70,47 @@
             android:layout_below="@+id/clickOnDescription">
 
             <TableRow
-                android:background="@color/green">
+                android:background="@color/blue">
                 <TextView
                     android:id="@+id/etatLine"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Etat"/>
+                    android:text="Etat"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/temperatureLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Temperature" />
+                    android:text="Temperature"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/puissanceLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Puissance" />
+                    android:text="Puissance"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/vibrationLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Vibration" />
+                    android:text="Vibration"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/debitLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="debit" />
+                    android:text="debit"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
             </TableRow>
             <TableRow
                 android:background="#F0F7F7"
@@ -109,31 +120,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="BON"/>
+                    android:text="BON"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/temperature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="70F" />
+                    android:text="70F"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/puissance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="200W" />
+                    android:text="200W"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/vibration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="75Hz" />
+                    android:text="75Hz"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/debit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="29Kg/s" />
+                    android:text="29Kg/s"
+                    android:textStyle="bold"/>
             </TableRow>
         </TableLayout>
         <TextView

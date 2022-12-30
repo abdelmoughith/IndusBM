@@ -1,5 +1,6 @@
 package com.example.indusbm;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -14,9 +15,12 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.droidsonroids.gif.GifImageView;
+
 
 public class FirstFragment extends Fragment {
 
+    GifImageView addCard;
     public FirstFragment(){
         // require a empty public constructor
     }
@@ -26,8 +30,10 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         view = inflater.inflate(R.layout.fragment_first, container, false);
+
+
+        addCard = view.findViewById(R.id.addCard);
         list_of_machines = view.findViewById(R.id.list_of_machines);
         if( myElements != null && !myElements.isEmpty()){
             AdapterItems adapterItems = new AdapterItems(myElements, getContext());
@@ -38,13 +44,16 @@ public class FirstFragment extends Fragment {
             list_of_machines.setAdapter(adapterItems);
             //noMusic.setVisibility(View.GONE);
         }
+        addCard.setOnClickListener(view1 -> {
+            startActivity(new Intent(getActivity(), AddActivity.class));
+        });
         return view;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        for (int i=0; i<10;i++){
+        for (int i=0; i<3;i++){
             myElements.add(new ElementClass("La corroyeuse", "assure le rabotage " +
                     "des quatre faces d’une pièce en un seul passage. Elle est " +
                     "appelée moulurière lorsqu’elle dispose d’un ou de plusieurs outils " +
