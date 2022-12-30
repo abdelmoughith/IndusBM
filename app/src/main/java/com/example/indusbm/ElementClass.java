@@ -2,14 +2,30 @@ package com.example.indusbm;
 
 public class ElementClass {
     private String name, description, etat;
-    private float temperature, vibration , frenquence, debit, puissance;
+    private String temperature, vibration , frenquence, debit, puissance;
+    private String temperatureRef, vibrationRef , frenquenceRef, debitRef, puissanceRef;
     private String editertime, editerinfo;
+
+    public ElementClass() {
+        //required
+    }
 
     public ElementClass(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
+    public ElementClass(String name, String description, String temperatureRef, String vibrationRef, String frenquenceRef, String debitRef, String puissanceRef, String editertime, String editerinfo) {
+        this.name = name;
+        this.description = description;
+        this.temperatureRef = temperatureRef;
+        this.vibrationRef = vibrationRef;
+        this.frenquenceRef = frenquenceRef;
+        this.debitRef = debitRef;
+        this.puissanceRef = puissanceRef;
+        this.editertime = editertime;
+        this.editerinfo = editerinfo;
+    }
 
     public String getEditertime() {
         return editertime;
@@ -27,11 +43,11 @@ public class ElementClass {
         this.editerinfo = editerinfo;
     }
 
-    public float getPuissance() {
+    public String getPuissance() {
         return puissance;
     }
 
-    public void setPuissance(float puissance) {
+    public void setPuissance(String puissance) {
         this.puissance = puissance;
     }
 
@@ -43,35 +59,35 @@ public class ElementClass {
         this.etat = etat;
     }
 
-    public float getTemperature() {
+    public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(float temperature) {
+    public void setTemperature(String temperature) {
         this.temperature = temperature;
     }
 
-    public float getVibration() {
+    public String getVibration() {
         return vibration;
     }
 
-    public void setVibration(float vibration) {
+    public void setVibration(String vibration) {
         this.vibration = vibration;
     }
 
-    public float getFrenquence() {
+    public String getFrenquence() {
         return frenquence;
     }
 
-    public void setFrenquence(float frenquence) {
+    public void setFrenquence(String frenquence) {
         this.frenquence = frenquence;
     }
 
-    public float getDebit() {
+    public String getDebit() {
         return debit;
     }
 
-    public void setDebit(float debit) {
+    public void setDebit(String debit) {
         this.debit = debit;
     }
 
@@ -89,5 +105,45 @@ public class ElementClass {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getTemperatureRef() {
+        return temperatureRef;
+    }
+
+    public void setTemperatureRef(String temperatureRef) {
+        this.temperatureRef = temperatureRef;
+    }
+
+    public String getVibrationRef() {
+        return vibrationRef;
+    }
+
+    public void setVibrationRef(String vibrationRef) {
+        this.vibrationRef = vibrationRef;
+    }
+
+    public String getFrenquenceRef() {
+        return frenquenceRef;
+    }
+
+    public void setFrenquenceRef(String frenquenceRef) {
+        this.frenquenceRef = frenquenceRef;
+    }
+
+    public String getDebitRef() {
+        return debitRef;
+    }
+
+    public void setDebitRef(String debitRef) {
+        this.debitRef = debitRef;
+    }
+
+    public String getPuissanceRef() {
+        return puissanceRef;
+    }
+
+    public void setPuissanceRef(String puissanceRef) {
+        this.puissanceRef = puissanceRef;
     }
 }

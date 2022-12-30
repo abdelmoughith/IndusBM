@@ -84,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Temperature"
+                    android:text="Temp"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
                 <TextView
@@ -92,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Puissance"
+                    android:text="Power"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
                 <TextView
@@ -100,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Vibration"
+                    android:text="Vibr"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
                 <TextView
@@ -109,6 +109,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="debit"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/frequency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="freq"
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
             </TableRow>
@@ -149,6 +157,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="29Kg/s"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/debit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="35Hz"
                     android:textStyle="bold"/>
             </TableRow>
         </TableLayout>
