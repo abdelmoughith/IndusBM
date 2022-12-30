@@ -10,17 +10,7 @@
     android:paddingTop="10dp"
     android:paddingEnd="20dp"
     android:paddingBottom="10dp"
-    tools:context=".MainActivity">
-    <ImageButton
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@raw/back"
-        android:background="@color/white"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="5dp"
-        android:scaleType="centerInside"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+    tools:context=".SignUp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -59,7 +49,7 @@
                 android:layout_below="@id/textSignUp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/input"
-
+                android:inputType="textEmailAddress"
                 android:hint="Email ID"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -88,7 +78,7 @@
                 android:layout_below="@id/fullname"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/input"
-
+                android:inputType="textPassword"
                 android:hint="Password"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -157,4 +147,15 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/newtologistics"/>
     </RelativeLayout>
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@raw/back"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
