@@ -39,7 +39,7 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         holder.debit.setText(current.getDebitRef()+"");
         holder.frequency.setText(current.getFrenquenceRef()+"");
         holder.editerinfo.setText(current.getEditerinfo()+"");
-        holder.editertime.setText(current.getEditertime()+"");
+        holder.editertime.setText(current.getEditertime()+" ");
     }
 
     @Override
