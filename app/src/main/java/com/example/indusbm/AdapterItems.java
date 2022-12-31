@@ -33,19 +33,28 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         holder.name.setText(current.getName());
         holder.description.setText(current.getDescription());
         holder.etat.setText(current.getEtat());
-        holder.temperature.setText(current.getTemperature() +"");
-        holder.puissance.setText(current.getPuissance()+"");
-        holder.vibration.setText(current.getVibration()+"");
-        holder.debit.setText(current.getDebit()+"");
+        holder.temperature.setText(current.getTemperatureRef() +"");
+        holder.puissance.setText(current.getPuissanceRef()+"");
+        holder.vibration.setText(current.getVibrationRef()+"");
+        holder.debit.setText(current.getDebitRef()+"");
+        holder.frequency.setText(current.getFrenquenceRef()+"");
+        holder.editerinfo.setText(current.getEditerinfo()+"");
+        holder.editertime.setText(current.getEditertime()+"");
     }
 
     @Override
     public int getItemCount() {
         return myList.size();
     }
+
+    //FIREBASE REAL TIME DATABASE
+
+
+
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView name, description, etat, temperature, puissance, vibration, debit;
-        TextView etatL, temperatureL, puissanceL, vibrationL, debitL;
+        TextView name, description, etat, frequency, temperature, puissance, vibration, debit;
+        TextView etatL,frequencyL, temperatureL, puissanceL, vibrationL, debitL;
+        TextView editerinfo, editertime;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
@@ -55,12 +64,18 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
             puissance = itemView.findViewById(R.id.puissance);
             vibration = itemView.findViewById(R.id.vibration);
             debit = itemView.findViewById(R.id.debit);
+            frequency = itemView.findViewById(R.id.frequency);
             //first line green or red
             etatL = itemView.findViewById(R.id.etatLine);
             temperatureL = itemView.findViewById(R.id.temperatureLine);
             puissanceL = itemView.findViewById(R.id.puissanceLine);
             vibrationL = itemView.findViewById(R.id.vibrationLine);
             debitL = itemView.findViewById(R.id.debitLine);
+            frequencyL = itemView.findViewById(R.id.frequencyLine);
+            //
+            editerinfo = itemView.findViewById(R.id.editerinfo);
+            editertime = itemView.findViewById(R.id.editertime);
+
         }
     }
 }

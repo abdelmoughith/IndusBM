@@ -112,7 +112,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"/>
                 <TextView
-                    android:id="@+id/frequency"
+                    android:id="@+id/frequencyLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -159,7 +159,7 @@
                     android:text="29Kg/s"
                     android:textStyle="bold"/>
                 <TextView
-                    android:id="@+id/debit"
+                    android:id="@+id/frequency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -181,7 +181,7 @@
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:layout_below="@id/table"
-            android:text="Temsamani Sohaib"
+            android:text="full name"
             android:textColor="@color/amber"
             android:textAlignment="textEnd"
             android:layout_alignParentEnd="true"/>

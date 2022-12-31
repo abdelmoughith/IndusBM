@@ -73,14 +73,14 @@ public class AddActivity extends AppCompatActivity {
                     getTime(),
                     name
             );
-            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Mchinery Cards");
+            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Machinery Cards");
             myRef.
-                    child(name).
                     child(nameinput.getText().toString()).
-                    child("References").setValue(elementToUpload)
+                    setValue(elementToUpload)
                     .addOnSuccessListener(aVoid -> {
                         // Write was successful!
                         Toast.makeText(this, "new machine references created By "+ name, Toast.LENGTH_SHORT).show();
+                        finish();
                     })
                     .addOnFailureListener(e -> {
                         // Write failed
