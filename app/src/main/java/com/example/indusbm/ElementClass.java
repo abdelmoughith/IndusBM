@@ -1,8 +1,8 @@
 package com.example.indusbm;
 
 public class ElementClass {
-    private String name, description, etat;
-    private String temperature, vibration , frenquence, debit, puissance;
+    private String name, description;
+    private String temperature, vibration , frenquence, debit, puissance, uploader;
     private String temperatureRef, vibrationRef , frenquenceRef, debitRef, puissanceRef;
     private String editertime, editerinfo;
 
@@ -15,7 +15,9 @@ public class ElementClass {
         this.description = description;
     }
 
-    public ElementClass(String name, String description, String temperatureRef, String vibrationRef, String frenquenceRef, String debitRef, String puissanceRef, String editertime, String editerinfo) {
+    //REFRENCES CONSTRUCTOR
+
+    public ElementClass(String name, String description, String temperatureRef, String vibrationRef, String frenquenceRef, String debitRef, String puissanceRef, String editerinfo) {
         this.name = name;
         this.description = description;
         this.temperatureRef = temperatureRef;
@@ -23,8 +25,26 @@ public class ElementClass {
         this.frenquenceRef = frenquenceRef;
         this.debitRef = debitRef;
         this.puissanceRef = puissanceRef;
-        this.editertime = editertime;
         this.editerinfo = editerinfo;
+    }
+
+    //INFO CONSTRUCTOR
+    public ElementClass(String temperature, String vibration, String frenquence, String debit, String puissance, String uploader, String editertime) {
+        this.temperature = temperature;
+        this.vibration = vibration;
+        this.frenquence = frenquence;
+        this.debit = debit;
+        this.puissance = puissance;
+        this.uploader = uploader;
+        this.editertime = editertime;
+    }
+
+    public String getUploader() {
+        return uploader;
+    }
+
+    public void setUploader(String uploader) {
+        this.uploader = uploader;
     }
 
     public String getEditertime() {
@@ -49,14 +69,6 @@ public class ElementClass {
 
     public void setPuissance(String puissance) {
         this.puissance = puissance;
-    }
-
-    public String getEtat() {
-        return etat;
-    }
-
-    public void setEtat(String etat) {
-        this.etat = etat;
     }
 
     public String getTemperature() {

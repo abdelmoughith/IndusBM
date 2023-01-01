@@ -62,9 +62,9 @@ public class FirstFragment extends Fragment {
 
 
         //FIREBASE REAL TIME DATABASE
-        mDatabase = FirebaseDatabase.getInstance().getReference();
         // Most viewed posts
-        Query myTopPostsQuery = FirebaseDatabase.getInstance().getReference("Machinery Cards");
+        Query myTopPostsQuery = FirebaseDatabase.getInstance().getReference("Machinery Cards").
+                child("REFERENCES");
         //.orderByChild("editerinfo/name/References/debitRef")
         // My top posts by number of stars
         myTopPostsQuery.addValueEventListener(new ValueEventListener() {
@@ -82,7 +82,7 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
+                //Getting Post failed, log a message
             }
         });
 
@@ -99,9 +99,6 @@ public class FirstFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
 
     }
 }

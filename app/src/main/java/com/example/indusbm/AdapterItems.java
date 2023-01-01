@@ -1,9 +1,11 @@
 package com.example.indusbm;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,12 +34,11 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         ElementClass current = myList.get(position);
         holder.name.setText(current.getName());
         holder.description.setText(current.getDescription());
-        holder.etat.setText(current.getEtat());
-        holder.temperature.setText(current.getTemperatureRef() +"");
-        holder.puissance.setText(current.getPuissanceRef()+"");
-        holder.vibration.setText(current.getVibrationRef()+"");
-        holder.debit.setText(current.getDebitRef()+"");
-        holder.frequency.setText(current.getFrenquenceRef()+"");
+        holder.temperature.setText(current.getTemperature() +"");
+        holder.puissance.setText(current.getPuissance()+"");
+        holder.vibration.setText(current.getVibration()+"");
+        holder.debit.setText(current.getDebit()+"");
+        holder.frequency.setText(current.getFrenquence()+"");
         holder.editerinfo.setText(current.getEditerinfo()+"");
         holder.editertime.setText(current.getEditertime()+" ");
     }
@@ -54,7 +55,8 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView name, description, etat, frequency, temperature, puissance, vibration, debit;
         TextView etatL,frequencyL, temperatureL, puissanceL, vibrationL, debitL;
-        TextView editerinfo, editertime;
+        TextView editerinfo, editertime, uploader;
+        Button btnEDIT;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
@@ -75,6 +77,15 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
             //
             editerinfo = itemView.findViewById(R.id.editerinfo);
             editertime = itemView.findViewById(R.id.editertime);
+            uploader = itemView.findViewById(R.id.uploader);
+            btnEDIT = itemView.findViewById(R.id.btnEDIT);
+            btnEDIT.setOnClickListener(view -> {
+                Intent intent = new Intent(context, DataListUser.class);
+                intent.putExtra("card name", name.getText().toString());
+                intent.putExtra("card description", description.getText().toString());
+                intent.putExtra("card editerinfo", editerinfo.getText().toString());
+                context.startActivity(intent);
+            });
 
         }
     }

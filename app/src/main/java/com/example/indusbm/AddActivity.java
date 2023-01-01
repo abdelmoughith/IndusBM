@@ -63,18 +63,37 @@ public class AddActivity extends AppCompatActivity {
                 TextUtils.isEmpty(description.getText().toString()) ) ) {
 
             ElementClass elementToUpload = new ElementClass(
+                    nameinput.getText().toString(), //machine name
+                    description.getText().toString(), //description
+                    temperature.getText().toString(),//temperature ref
+                    vibration.getText().toString(),//vibration ref
+                    frequency.getText().toString(),//frequency ref
+                    debit.getText().toString(),//debit ref
+                    powerful.getText().toString(),//powerful ref
+                    name //created by
+            );
+            /*
+            ElementClass elementToUpload = new ElementClass(
                     nameinput.getText().toString(),
                     description.getText().toString(),
-                    temperature.getText().toString(),
-                    vibration.getText().toString(),
-                    frequency.getText().toString(),
-                    debit.getText().toString(),
-                    powerful.getText().toString(),
-                    getTime(),
+                    "0",//temperature ref
+                    "0",//vibration ref
+                    "0",//frequency ref
+                    "0",//debit ref
+                    "0",//powerful reff
+                    "no Uploader yet", // oploader
+                    temperature.getText().toString(),//temperature
+                    vibration.getText().toString(),//vibration
+                    frequency.getText().toString(),//frequency
+                    debit.getText().toString(),//debit
+                    powerful.getText().toString(),//powerful
+                    "", //no uploader so no time
                     name
             );
+             */
             DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Machinery Cards");
             myRef.
+                    child("REFERENCES").
                     child(nameinput.getText().toString()).
                     setValue(elementToUpload)
                     .addOnSuccessListener(aVoid -> {
@@ -89,16 +108,5 @@ public class AddActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "fill all the informations", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    private String getTime(){
-        DateTimeFormatter dtf = null;
-        ZonedDateTime now = null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            dtf = DateTimeFormatter.ofPattern("uuuu/MM/dd HH:mm");
-            now = ZonedDateTime.now();
-            return dtf.format(now);
-        }
-        return "hhh";
     }
 }
