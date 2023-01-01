@@ -10,4 +10,9 @@
         android:name="com.example.indusbm.FirstFragment"
         android:label="HOME"
         tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/or"
+        android:name="com.example.indusbm.Or"
+        android:label="HOME"
+        tools:layout="@layout/fragment_or" />
 </navigation>

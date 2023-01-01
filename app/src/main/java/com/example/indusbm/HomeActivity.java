@@ -29,10 +29,13 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.dashbord:
                     getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, new FirstFragment()).commit();
                     return true;
+                case R.id.or:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, new Or()).commit();
+                    return true;
             }
             return false;
         });
-        loadFragment(new FirstFragment());
+        loadFragment(new FirstFragment());// just for test it must be new FirstFragment()
 
 
     }

@@ -5,8 +5,8 @@
         android:id="@+id/dashbord"
         android:icon="@drawable/ic_launcher_background"/>
     <item
-        android:title="Users"
-        android:id="@+id/users"
+        android:title="Or"
+        android:id="@+id/or"
         android:icon="@drawable/ic_launcher_background"/>
     <item
         android:title="Profile"

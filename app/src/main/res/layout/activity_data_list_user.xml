@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="330dp"
+    android:layout_height="400dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
@@ -236,11 +236,18 @@
             android:background="@drawable/inputbutton"/>
 
         <TextView
+            android:id="@+id/thisop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/savechanges"
+            android:text="this operation will not affect the references value. However it will change only information values above and submitted with the following username :\n"
+            android:textColor="@color/white01" />
+        <TextView
             android:id="@+id/uploader"
             android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
             android:text="full name"
+            android:layout_below="@+id/thisop"
             android:textColor="@color/amber"
             android:textAlignment="textEnd"
             android:layout_alignParentEnd="true"/>

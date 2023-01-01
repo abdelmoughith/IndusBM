@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Or">
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_marginBottom="100dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_margin="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:background="@drawable/elementbackground">
+            <TableLayout
+                android:id="@+id/table"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TableRow android:padding="10dp">
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Teneur d'or ds l'echantillant (g/T) :"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_weight="1"/>
+                    <EditText
+                        android:id="@+id/teneurDor"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:background="@drawable/input"
+                        android:textStyle="bold" />
+                </TableRow>
+                <TableRow android:padding="10dp">
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Taux de recuperation (%) :"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+                    <EditText
+                        android:id="@+id/tauxDeRecuperation"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:background="@drawable/input"
+                        android:textStyle="bold"
+                        />
+                </TableRow>
+                <TableRow android:padding="10dp">
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Tonnage totale (T) :"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <EditText
+                        android:id="@+id/tonnageT"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:background="@drawable/input"
+                        android:textStyle="bold"
+                        />
+                </TableRow>
+                <TableRow android:padding="10dp">
+                    <TextView
+                        android:id="@+id/dd"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Dillution (%) :"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <EditText
+                        android:id="@+id/dillution"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:layout_weight="1"
+                        android:background="@drawable/input"
+                        android:textStyle="bold"/>
+                </TableRow>
+                <TableRow android:padding="10dp">
+                    <TextView
+                        android:id="@+id/cc"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Cout d'exploitation et de traitement ($/T) :"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <EditText
+                        android:id="@+id/cout"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:layout_weight="1" android:background="@drawable/input"
+                        android:textStyle="bold"
+                        />
+                </TableRow>
+                <TableRow android:padding="10dp">
+                    <TextView
+                        android:id="@+id/pp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Prix de vente ($/lb) :"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <EditText
+                        android:id="@+id/prix"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:layout_weight="1"
+                        android:background="@drawable/input"
+                        android:textStyle="bold"/>
+                </TableRow>
+
+            </TableLayout>
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/table">
+                <TableRow android:background="#052D57">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Mineral"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Teneur \n(% massique)"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </TableRow>
+
+
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Quartz"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/l1c1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:hint="0"
+                        android:textAlignment="center"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white"/>
+
+                </TableRow>
+
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Muscovite"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/l2c1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:hint="0"
+                        android:textAlignment="center"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white"/>
+
+                </TableRow>
+
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Chlorite"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/l3c1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:hint="0"
+                        android:textAlignment="center"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white" />
+
+                </TableRow>
+
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Albitie"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/l4c1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:hint="0"
+                        android:textAlignment="center"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white" />
+
+                </TableRow>
+
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Dolomite"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/l5c1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:hint="0"
+                        android:textAlignment="center"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white" />
+
+                </TableRow>
+
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="Pyrite"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/l6c1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:hint="0"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white"/>
+
+                </TableRow>
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:padding="10sp"
+                        android:text="chalcopyrite "
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/chalcopyrite"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:hint="0"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white"/>
+
+                </TableRow>
+
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="Sphalerite"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"  />
+
+                    <EditText
+                        android:id="@+id/l7c1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:hint="0"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white"/>
+
+                </TableRow>
+                <TableRow android:background="#6A8488">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center_horizontal"
+                        android:text="Sphalerite"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"  />
+
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:background="#6A8488"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:text="100"
+                        android:textSize="15sp"
+                        android:textColorHint="@color/white"/>
+
+                </TableRow>
+
+            </TableLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/resultat"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+        android:text="Resultat"
+        android:background="@drawable/inputbutton"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/scroll_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
