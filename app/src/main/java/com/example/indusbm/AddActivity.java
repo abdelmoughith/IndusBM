@@ -72,30 +72,34 @@ public class AddActivity extends AppCompatActivity {
                     powerful.getText().toString(),//powerful ref
                     name //created by
             );
-            /*
-            ElementClass elementToUpload = new ElementClass(
-                    nameinput.getText().toString(),
-                    description.getText().toString(),
-                    "0",//temperature ref
-                    "0",//vibration ref
-                    "0",//frequency ref
-                    "0",//debit ref
-                    "0",//powerful reff
-                    "no Uploader yet", // oploader
-                    temperature.getText().toString(),//temperature
-                    vibration.getText().toString(),//vibration
-                    frequency.getText().toString(),//frequency
-                    debit.getText().toString(),//debit
-                    powerful.getText().toString(),//powerful
-                    "", //no uploader so no time
-                    name
+            ElementClass elementToUploadINFO = new ElementClass(
+                    "0", //temperature
+                    "0", //vibration
+                    "0", //frequency
+                    "0", //debit
+                    "0", //powerful
+                    "", //oploader
+                    ""  //no uploader so no time
             );
-             */
             DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Machinery Cards");
             myRef.
-                    child("REFERENCES").
                     child(nameinput.getText().toString()).
+                    child("REF").
                     setValue(elementToUpload)
+                    .addOnSuccessListener(aVoid -> {
+                        // Write was successful!
+                        Toast.makeText(this, "new machine references created By "+ name, Toast.LENGTH_SHORT).show();
+                        finish();
+                    })
+                    .addOnFailureListener(e -> {
+                        // Write failed
+                        Toast.makeText(this, "Error while uploading", Toast.LENGTH_SHORT).show();
+                    });
+            DatabaseReference myRef2 = FirebaseDatabase.getInstance().getReference("Machinery Cards");
+            myRef2.
+                    child(nameinput.getText().toString()).
+                    child("INFO").
+                    setValue(elementToUploadINFO)
                     .addOnSuccessListener(aVoid -> {
                         // Write was successful!
                         Toast.makeText(this, "new machine references created By "+ name, Toast.LENGTH_SHORT).show();

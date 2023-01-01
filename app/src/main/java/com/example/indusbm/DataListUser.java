@@ -45,6 +45,11 @@ public class DataListUser extends AppCompatActivity {
         vibration = findViewById(R.id.vibration);
         debit = findViewById(R.id.debit);
         frequency = findViewById(R.id.frequency);
+        temperature.setText(getIntent().getExtras().getString("t"));
+        puissance.setText(getIntent().getExtras().getString("p"));
+        vibration.setText(getIntent().getExtras().getString("v"));
+        frequency.setText(getIntent().getExtras().getString("f"));
+        debit.setText(getIntent().getExtras().getString("d"));
 
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -58,13 +63,18 @@ public class DataListUser extends AppCompatActivity {
                     TextUtils.isEmpty(vibration.getText().toString()) ||
                     TextUtils.isEmpty(debit.getText().toString()) ||
                     TextUtils.isEmpty(frequency.getText().toString()))) {
-
+                float t,v,f,d,p;
+                t = Float.parseFloat(temperature.getText().toString());
+                v = Float.parseFloat(vibration.getText().toString());
+                f = Float.parseFloat(frequency.getText().toString());
+                d = Float.parseFloat(debit.getText().toString());
+                p = Float.parseFloat(puissance.getText().toString());
                 ElementClass elementToUpload = new ElementClass(
-                        temperature.getText().toString(),//temperature
-                        vibration.getText().toString(),//vibration
-                        frequency.getText().toString(),//frequency
-                        debit.getText().toString(),//debit
-                        puissance.getText().toString(),//powerful
+                        String.valueOf(t),//temperature
+                        String.valueOf(v),//vibration
+                        String.valueOf(f),//frequency
+                        String.valueOf(d),//debit
+                        String.valueOf(p),//powerful
                         uploaderString, // oploader
                         getTime() //no uploader so no time
                 );
@@ -72,8 +82,8 @@ public class DataListUser extends AppCompatActivity {
 
                 DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Machinery Cards");
                 myRef.
-                        child("INFO").
                         child(getIntent().getExtras().getString("card name")).
+                        child("INFO").
                         setValue(elementToUpload)
                         .addOnSuccessListener(aVoid -> {
                             // Write was successful!

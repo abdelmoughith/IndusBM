@@ -41,6 +41,62 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         holder.frequency.setText(current.getFrenquence()+"");
         holder.editerinfo.setText(current.getEditerinfo()+"");
         holder.editertime.setText(current.getEditertime()+" ");
+        holder.uploader.setText(current.getUploader()+"");
+        //comparing references
+        float t,v,f,d,p;
+        t = Math.abs(Float.parseFloat(current.getTemperature()) -
+                Float.parseFloat(current.getTemperatureRef()) );
+        v = Math.abs(Float.parseFloat(current.getVibration()) -
+                Float.parseFloat(current.getVibrationRef()) );
+        f = Math.abs(Float.parseFloat(current.getFrenquence()) -
+                Float.parseFloat(current.getFrenquenceRef()) );
+        d = Math.abs(Float.parseFloat(current.getDebit()) -
+                Float.parseFloat(current.getDebitRef()) );
+        p = Math.abs(Float.parseFloat(current.getPuissance()) -
+                Float.parseFloat(current.getPuissanceRef()) );
+        if (t > 2 && t < 5){ //we have + or - 2 with abs = +2
+            holder.temperatureL.setBackgroundResource(R.color.amber);
+        }else if (t >= 5){
+            holder.temperatureL.setBackgroundResource(R.color.red);
+        }else if (t < 1){
+            holder.temperatureL.setBackgroundResource(R.color.green);
+        }
+        ////////
+        if (v > 2 && v < 5){ //we have + or - 2 with abs = +2
+            holder.vibrationL.setBackgroundResource(R.color.amber);
+        }else if (v >= 5){
+            holder.vibrationL.setBackgroundResource(R.color.red);
+        }
+        else if (v < 1){
+            holder.vibrationL.setBackgroundResource(R.color.green);
+        }
+        //////////
+        if (f > 2 && f < 5){ //we have + or - 2 with abs = +2
+            holder.frequencyL.setBackgroundResource(R.color.amber);
+        }else if (f >= 5){
+            holder.frequencyL.setBackgroundResource(R.color.red);
+        }
+        else if (f < 1){
+            holder.frequencyL.setBackgroundResource(R.color.green);
+        }
+        //////
+        if (d > 2 && d < 5){ //we have + or - 2 with abs = +2
+            holder.debitL.setBackgroundResource(R.color.amber);
+        }else if (d >= 5){
+            holder.debitL.setBackgroundResource(R.color.red);
+        }
+        else if (d < 1){
+            holder.debitL.setBackgroundResource(R.color.green);
+        }
+        ///////
+        if (p > 2 && p < 5){ //we have + or - 2 with abs = +2
+            holder.puissanceL.setBackgroundResource(R.color.amber);
+        }else if (p >= 5){
+            holder.puissanceL.setBackgroundResource(R.color.red);
+        }
+        else if (p < 1){
+            holder.puissanceL.setBackgroundResource(R.color.green);
+        }
     }
 
     @Override
@@ -84,6 +140,12 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
                 intent.putExtra("card name", name.getText().toString());
                 intent.putExtra("card description", description.getText().toString());
                 intent.putExtra("card editerinfo", editerinfo.getText().toString());
+                //info to avoid rewriting
+                intent.putExtra("t", temperature.getText().toString());
+                intent.putExtra("p", puissance.getText().toString());
+                intent.putExtra("v", vibration.getText().toString());
+                intent.putExtra("d", debit.getText().toString());
+                intent.putExtra("f", frequency.getText().toString());
                 context.startActivity(intent);
             });
 

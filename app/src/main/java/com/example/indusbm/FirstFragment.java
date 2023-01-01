@@ -63,8 +63,7 @@ public class FirstFragment extends Fragment {
 
         //FIREBASE REAL TIME DATABASE
         // Most viewed posts
-        Query myTopPostsQuery = FirebaseDatabase.getInstance().getReference("Machinery Cards").
-                child("REFERENCES");
+        Query myTopPostsQuery = FirebaseDatabase.getInstance().getReference("Machinery Cards");
         //.orderByChild("editerinfo/name/References/debitRef")
         // My top posts by number of stars
         myTopPostsQuery.addValueEventListener(new ValueEventListener() {
@@ -72,9 +71,18 @@ public class FirstFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    ElementClass elementClass = postSnapshot.getValue(ElementClass.class);
+                    ElementClass elementREF = postSnapshot.child("").child("REF").getValue(ElementClass.class);
+                    ElementClass elementINFO = postSnapshot.child("").child("INFO").getValue(ElementClass.class);
+                    //passing info to ref
+                    elementREF.setTemperature(elementINFO.getTemperature());
+                    elementREF.setVibration(elementINFO.getVibration());
+                    elementREF.setFrenquence(elementINFO.getFrenquence());
+                    elementREF.setDebit(elementINFO.getDebit());
+                    elementREF.setPuissance(elementINFO.getPuissance());
+                    elementREF.setUploader(elementINFO.getUploader());
+                    elementREF.setEditertime(elementINFO.getEditertime());
 
-                    myElements.add(elementClass);
+                    myElements.add(elementREF);
 
                 }
                 adapterItems.notifyDataSetChanged();
