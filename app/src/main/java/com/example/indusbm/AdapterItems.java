@@ -54,44 +54,44 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
                 Float.parseFloat(current.getDebitRef()) );
         p = Math.abs(Float.parseFloat(current.getPuissance()) -
                 Float.parseFloat(current.getPuissanceRef()) );
-        if (t > 2 && t < 5){ //we have + or - 2 with abs = +2
+        if (t > 2 && t < 3){ //we have + or - 2 with abs = +2
             holder.temperatureL.setBackgroundResource(R.color.amber);
-        }else if (t >= 5){
+        }else if (t >= 3){
             holder.temperatureL.setBackgroundResource(R.color.red);
         }else if (t < 1){
             holder.temperatureL.setBackgroundResource(R.color.green);
         }
         ////////
-        if (v > 2 && v < 5){ //we have + or - 2 with abs = +2
+        if (v > 2 && v < 3){ //we have + or - 2 with abs = +2
             holder.vibrationL.setBackgroundResource(R.color.amber);
-        }else if (v >= 5){
+        }else if (v >= 3){
             holder.vibrationL.setBackgroundResource(R.color.red);
         }
         else if (v < 1){
             holder.vibrationL.setBackgroundResource(R.color.green);
         }
         //////////
-        if (f > 2 && f < 5){ //we have + or - 2 with abs = +2
+        if (f > 2 && f < 3){ //we have + or - 2 with abs = +2
             holder.frequencyL.setBackgroundResource(R.color.amber);
-        }else if (f >= 5){
+        }else if (f >= 3){
             holder.frequencyL.setBackgroundResource(R.color.red);
         }
         else if (f < 1){
             holder.frequencyL.setBackgroundResource(R.color.green);
         }
         //////
-        if (d > 2 && d < 5){ //we have + or - 2 with abs = +2
+        if (d > 2 && d < 3){ //we have + or - 2 with abs = +2
             holder.debitL.setBackgroundResource(R.color.amber);
-        }else if (d >= 5){
+        }else if (d >= 3){
             holder.debitL.setBackgroundResource(R.color.red);
         }
         else if (d < 1){
             holder.debitL.setBackgroundResource(R.color.green);
         }
         ///////
-        if (p > 2 && p < 5){ //we have + or - 2 with abs = +2
+        if (p > 2 && p < 3){ //we have + or - 2 with abs = +2
             holder.puissanceL.setBackgroundResource(R.color.amber);
-        }else if (p >= 5){
+        }else if (p >= 3){
             holder.puissanceL.setBackgroundResource(R.color.red);
         }
         else if (p < 1){
