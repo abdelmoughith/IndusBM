@@ -23,12 +23,10 @@ public class OrResult extends AppCompatActivity {
         TextView textView3 = findViewById(R.id.textView3);
         TextView good = findViewById(R.id.tc);
 
-        /*
         textView1.setText(getIntent().getExtras().getDouble("res1")+"");
         textView2.setText(getIntent().getExtras().getDouble("res2")+"");
         textView3.setText(getIntent().getExtras().getDouble("res3")+"");
         good.setText(getIntent().getExtras().getDouble("res4")+"");
-*/
         gifImageViewRESULT = findViewById(R.id.resultIMG);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.check);
         gifImageViewRESULT.setImageURI(uri);
