@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
             }
             return false;
         });
-        loadFragment(new FirstFragment());// just for test it must be new FirstFragment()
+        loadFragment(new Or());// just for test it must be new FirstFragment()
 
 
     }

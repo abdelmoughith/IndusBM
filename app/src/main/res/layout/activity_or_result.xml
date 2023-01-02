@@ -128,11 +128,10 @@
         </TableLayout>
     </RelativeLayout>
 
-    <VideoView
-        android:id="@+id/resultVideo"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/resultIMG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

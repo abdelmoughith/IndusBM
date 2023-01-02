@@ -77,6 +77,7 @@ public class Or extends Fragment {
             }
 
         });
+        startActivity(new Intent(getActivity(), OrResult.class));
         return view;
     }
 }
