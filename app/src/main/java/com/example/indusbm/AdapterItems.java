@@ -145,7 +145,17 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         }
         //holder.etatL.setBackgroundResource();
         //holder.etat.setText();
-        //for (in)
+        if( (t > 2 && t < 3) || (v > 2 && v < 3) || (f > 2 && f < 3) || (d > 2 && d < 3) || (p > 2 && p < 3) ){ //we have + or - 2 with abs = +2
+            holder.etatL.setBackgroundResource(R.color.amber);
+            holder.etat.setText("Normal");
+        }else if ( (t >= 3) || (v >= 3) || (f >= 3) || (d >= 3) || (p >= 3) ){
+            holder.etatL.setBackgroundResource(R.color.red);
+            holder.etat.setText("Bad");
+        }
+        else if ( (t < 1) || (v < 1) || (f < 1) || (d < 1) || (p < 1) ){
+            holder.etatL.setBackgroundResource(R.color.green);
+            holder.etat.setText("Very Good");
+        }
     }
 
     @Override
