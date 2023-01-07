@@ -5,6 +5,7 @@ public class ElementClass {
     private String temperature, vibration , frenquence, debit, puissance, uploader;
     private String temperatureRef, vibrationRef , frenquenceRef, debitRef, puissanceRef;
     private String editertime, editerinfo;
+    private String imageUrl;
 
     public ElementClass() {
         //required
@@ -37,6 +38,14 @@ public class ElementClass {
         this.puissance = puissance;
         this.uploader = uploader;
         this.editertime = editertime;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getUploader() {

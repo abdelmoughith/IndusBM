@@ -48,7 +48,17 @@
             android:layout_below="@+id/references"
             android:layout_margin="10dp"
             >
-
+            <TableRow android:layout_margin="10dp">
+                <Button
+                    android:id="@+id/add_img"
+                    android:text="Add Image"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:background="@drawable/inputbutton"
+                    />
+            </TableRow>
             <TableRow
                 android:layout_margin="10dp">
                 <EditText
@@ -241,6 +251,13 @@
                     android:textAlignment="textStart"
                     android:textSize="20sp"/>
 
+            </TableRow>
+            <TableRow android:layout_margin="10dp">
+                <ImageView
+                    android:id="@+id/image_To_Upload"
+                    android:layout_weight="1"
+                    android:background="@color/nightBlack03"
+                    />
             </TableRow>
         </TableLayout>
     </RelativeLayout>

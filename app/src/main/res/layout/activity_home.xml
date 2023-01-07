@@ -4,25 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:background="@color/nightBlack02">
+    android:background="@color/nightBlack02"
+    tools:context=".HomeActivity">
+
     <FrameLayout
         android:id="@+id/flFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="65dp"
-        app:menu="@menu/bottom_nav">
-    </FrameLayout>
+        app:menu="@menu/bottom_nav"></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottonnav"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_alignParentBottom="true"
+        android:background="@color/nightBlack02"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav"
-        android:background="@color/nightBlack02"/>
+        app:menu="@menu/bottom_nav" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

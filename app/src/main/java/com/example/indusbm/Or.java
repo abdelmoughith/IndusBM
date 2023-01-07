@@ -40,6 +40,16 @@ public class Or extends Fragment {
         EditText prix = view.findViewById(R.id.prix);
         EditText cout = view.findViewById(R.id.cout);
 
+        //second table
+        EditText l1c1 = view.findViewById(R.id.l1c1);
+        EditText l2c1 = view.findViewById(R.id.l2c1);
+        EditText l3c1 = view.findViewById(R.id.l3c1);
+        EditText l4c1 = view.findViewById(R.id.l4c1);
+        EditText l5c1 = view.findViewById(R.id.l5c1);
+        EditText l6c1 = view.findViewById(R.id.l6c1);
+        EditText chalcopyrite = view.findViewById(R.id.chalcopyrite);
+        EditText l7c1 = view.findViewById(R.id.l7c1);
+
 
 
         result.setOnClickListener(view -> {

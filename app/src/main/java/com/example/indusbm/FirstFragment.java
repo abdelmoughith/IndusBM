@@ -1,6 +1,7 @@
 package com.example.indusbm;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +39,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class FirstFragment extends Fragment {
 
-    GifImageView addCard;
+    Button addCard;
     public FirstFragment(){
         // require a empty public constructor
     }
@@ -44,7 +49,6 @@ public class FirstFragment extends Fragment {
 
     //FIREBASE REAL TIME DATABASE
     private DatabaseReference mDatabase;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -56,9 +60,11 @@ public class FirstFragment extends Fragment {
         list_of_machines = view.findViewById(R.id.list_of_machines);
         AdapterItems adapterItems = new AdapterItems(myElements, getContext());
 
+
         addCard.setOnClickListener(view1 -> {
             startActivity(new Intent(getActivity(), AddActivity.class));
         });
+
 
 
         //FIREBASE REAL TIME DATABASE

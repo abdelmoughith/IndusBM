@@ -1,21 +1,39 @@
 package com.example.indusbm;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageMetadata;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> {
     List<ElementClass> myList;
     Context context;
+    String build_string_from_random;
 
     public AdapterItems(List<ElementClass> myList, Context context) {
         this.myList = myList;
@@ -29,6 +47,8 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         return new ViewHolder(view);
     }
 
+    // Create a storage reference from our app
+    StorageReference storageRef = FirebaseStorage.getInstance().getReference();
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ElementClass current = myList.get(position);
@@ -42,6 +62,32 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         holder.editerinfo.setText(current.getEditerinfo()+"");
         holder.editertime.setText(current.getEditertime()+" ");
         holder.uploader.setText(current.getUploader()+"");
+
+        // Get reference to the file
+
+        build_string_from_random = "machines PDP/" + current.getImageUrl();
+        StorageReference reference = storageRef.child(build_string_from_random);
+
+        // Create file metadata including the content type
+        StorageMetadata metadata = new StorageMetadata.Builder()
+                .setContentType("image/jpg")
+                .setCustomMetadata("myCustomProperty", "myValue")
+                .build();
+
+        // Update metadata properties
+        final long ONE_MEGABYTE = 1024 * 1024;
+        reference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                holder.pdp.setImageBitmap(bmp);
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+            }
+        });
         //comparing references
         float t,v,f,d,p;
         t = Math.abs(Float.parseFloat(current.getTemperature()) -
@@ -97,6 +143,9 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         else if (p < 1){
             holder.puissanceL.setBackgroundResource(R.color.green);
         }
+        //holder.etatL.setBackgroundResource();
+        //holder.etat.setText();
+        //for (in)
     }
 
     @Override
@@ -113,6 +162,7 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         TextView etatL,frequencyL, temperatureL, puissanceL, vibrationL, debitL;
         TextView editerinfo, editertime, uploader;
         Button btnEDIT;
+        ImageView pdp;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
@@ -135,6 +185,7 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
             editertime = itemView.findViewById(R.id.editertime);
             uploader = itemView.findViewById(R.id.uploader);
             btnEDIT = itemView.findViewById(R.id.btnEDIT);
+            pdp = itemView.findViewById(R.id.pdp);
             btnEDIT.setOnClickListener(view -> {
                 Intent intent = new Intent(context, DataListUser.class);
                 intent.putExtra("card name", name.getText().toString());
