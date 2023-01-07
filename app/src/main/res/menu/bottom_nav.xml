@@ -9,7 +9,7 @@
         android:id="@+id/or"
         android:icon="@drawable/orimg"/>
     <item
-        android:title="Profile"
-        android:id="@+id/profile"
+        android:title="rapport"
+        android:id="@+id/rapport"
         android:icon="@drawable/rapportimg"/>
 </menu>

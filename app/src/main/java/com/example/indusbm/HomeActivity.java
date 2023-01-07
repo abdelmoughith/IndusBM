@@ -50,6 +50,9 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.or:
                     getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, new Or()).commit();
                     return true;
+                case R.id.rapport:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, new Rapport()).commit();
+                    return true;
             }
             return false;
         });
