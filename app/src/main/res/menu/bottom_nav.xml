@@ -3,13 +3,13 @@
     <item
         android:title="Dashbord"
         android:id="@+id/dashbord"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/dash"/>
     <item
         android:title="Or"
         android:id="@+id/or"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/orimg"/>
     <item
         android:title="Profile"
         android:id="@+id/profile"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/rapportimg"/>
 </menu>
