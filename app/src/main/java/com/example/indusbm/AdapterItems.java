@@ -75,7 +75,7 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
                 .build();
 
         // Update metadata properties
-        final long ONE_MEGABYTE = 1024 * 1024;
+        final long ONE_MEGABYTE = 1024 * 1024 * 10;
         reference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
