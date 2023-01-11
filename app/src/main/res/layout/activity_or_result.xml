@@ -537,37 +537,70 @@
                 android:textColor="#0C3201"
                 android:textStyle="italic|bold"
                 android:textAlignment="center"/>
-            <TableLayout
-                android:layout_below="@id/madeby"
-                android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:id="@+id/sohaib"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="50dp"
+                android:layout_below="@id/madeby">
+                <ImageView
+                    android:src="@raw/sohaib"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/sohaibnom"
+                android:layout_toEndOf="@+id/sohaib"
+                android:layout_below="@+id/madeby"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:weightSum="5"
-                android:layout_margin="10dp">
-                <TableRow android:padding="2dp">
-                    <ImageView
-                        android:src="@raw/sohaib"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="2"/>
-                    <TextView
-                        android:text="Temsamani Sohaib"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:layout_weight="3"/>
-                </TableRow>
-                <TableRow android:padding="2dp">
-                    <ImageView
-                        android:src="@raw/khalid"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="2"/>
-                    <TextView
-                        android:text="Anbri Khalid"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:layout_weight="3"/>
-                </TableRow>
-            </TableLayout>
+                android:text="Temsamani Sohaib"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_below="@+id/sohaibnom"
+                android:layout_toEndOf="@+id/sohaib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Etudiant ENSA - BM"
+                android:textSize="15sp"
+                android:textStyle="italic"/>
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:id="@+id/khalid"
+                android:layout_below="@+id/sohaib"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="50dp">
+                <ImageView
+                    android:src="@raw/khalid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/khalidnom"
+                android:layout_below="@+id/sohaib"
+                android:layout_toEndOf="@+id/khalid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anbri Khalid"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_below="@+id/khalidnom"
+                android:layout_toEndOf="@+id/khalid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Etudiant ENSA - BM"
+                android:textSize="15sp"
+                android:textStyle="italic"/>
 
         </RelativeLayout>
 
