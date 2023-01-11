@@ -1,6 +1,7 @@
 package com.example.indusbm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -67,6 +68,7 @@ public class OrResult extends AppCompatActivity {
     TextView conclusionTeneur;
     ImageView imageofconclusion;
     TableLayout machinemaintenance;
+    CardView sohaib , khalid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,8 +103,20 @@ public class OrResult extends AppCompatActivity {
         //Teneur d'or ...
         conclusionTeneur = findViewById(R.id.conclusion);
         imageofconclusion = findViewById(R.id.imageofconclusion);
+        sohaib = findViewById(R.id.sohaib);
+        khalid = findViewById(R.id.khalid);
         setDataPieChart();
 
+        sohaib.setOnClickListener(view -> {
+            Uri uri = Uri.parse("https://www.linkedin.com/in/sohaib-temsamani/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
+        khalid.setOnClickListener(view -> {
+            Uri uri = Uri.parse("https://www.linkedin.com/in/khalid-anbri-448879218/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
         //FIREBASE REAL TIME DATABASE
         // Most viewed posts
 
