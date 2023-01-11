@@ -145,16 +145,24 @@ public class AdapterItems extends RecyclerView.Adapter<AdapterItems.ViewHolder> 
         }
         //holder.etatL.setBackgroundResource();
         //holder.etat.setText();
-        if( (t > 2 && t < 3) || (v > 2 && v < 3) || (f > 2 && f < 3) || (d > 2 && d < 3) || (p > 2 && p < 3) ){ //we have + or - 2 with abs = +2
-            holder.etatL.setBackgroundResource(R.color.amber);
-            holder.etat.setText("Normal");
-        }else if ( (t >= 3) || (v >= 3) || (f >= 3) || (d >= 3) || (p >= 3) ){
+        boolean done = false;
+        if (( (t >= 3) || (v >= 3) || (f >= 3) || (d >= 3) || (p >= 3) ) && !done ){ //we have + or - 2 with abs = +2
             holder.etatL.setBackgroundResource(R.color.red);
             holder.etat.setText("Bad");
+            done = true;
+        }else if(( (t > 2 && t < 3) || (v > 2 && v < 3) || (f > 2 && f < 3) || (d > 2 && d < 3) || (p > 2 && p < 3) )&& !done ){
+            holder.etatL.setBackgroundResource(R.color.amber);
+            holder.etat.setText("Amber");
+            done = true;
+        }else if (( (t > 1 && t <= 2) || (v > 1 && v <= 2) || (f > 1 && f <= 2) || (d > 1 && d <= 2) || (p > 1 && p <= 2) )&& !done ){
+            holder.etatL.setBackgroundResource(R.color.blue);
+            holder.etat.setText("Good");
+            done = true;
         }
-        else if ( (t < 1) || (v < 1) || (f < 1) || (d < 1) || (p < 1) ){
+        else if (( (t < 1) || (v < 1) || (f < 1) || (d < 1) || (p < 1) ) && !done ){
             holder.etatL.setBackgroundResource(R.color.green);
             holder.etat.setText("Very Good");
+            done = true;
         }
     }
 

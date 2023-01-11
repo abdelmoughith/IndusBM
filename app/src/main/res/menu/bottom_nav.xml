@@ -8,8 +8,4 @@
         android:title="Or"
         android:id="@+id/or"
         android:icon="@drawable/orimg"/>
-    <item
-        android:title="rapport"
-        android:id="@+id/rapport"
-        android:icon="@drawable/rapportimg"/>
 </menu>

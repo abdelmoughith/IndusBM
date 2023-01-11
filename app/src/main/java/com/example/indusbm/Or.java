@@ -57,31 +57,60 @@ public class Or extends Fragment {
                     TextUtils.isEmpty(tauxDeRecuperation.getText().toString()) ||
                     TextUtils.isEmpty(tonnageT.getText().toString()) ||
                     TextUtils.isEmpty(dillution.getText().toString()) ||
-                    TextUtils.isEmpty(prix.getText().toString()))) {
-                String v1 = teneurDor.getText().toString();
-                String v2 = tauxDeRecuperation.getText().toString();
-                String v3 = tonnageT.getText().toString();
-                String v4 = dillution.getText().toString();
-                String v5 = cout.getText().toString();
-                String v6 = prix.getText().toString();
+                    TextUtils.isEmpty(prix.getText().toString()) || // second table
+                    TextUtils.isEmpty(l1c1.getText().toString()) ||
+                    TextUtils.isEmpty(l2c1.getText().toString()) ||
+                    TextUtils.isEmpty(l3c1.getText().toString()) ||
+                    TextUtils.isEmpty(l4c1.getText().toString()) ||
+                    TextUtils.isEmpty(l5c1.getText().toString()) ||
+                    TextUtils.isEmpty(l6c1.getText().toString()) ||
+                    TextUtils.isEmpty(chalcopyrite.getText().toString()) ||
+                    TextUtils.isEmpty(l7c1.getText().toString())
+            )) {
+                Double iv1 = Double.valueOf(teneurDor.getText().toString());
+                Double iv2 = Double.valueOf(tauxDeRecuperation.getText().toString());
+                Double iv3 = Double.valueOf(tonnageT.getText().toString());
+                Double iv4 = Double.valueOf(dillution.getText().toString());
+                Double iv5 = Double.valueOf(cout.getText().toString());
+                Double iv6 = Double.valueOf(prix.getText().toString());
 
-                Double iv1 = Double.valueOf(v1);
-                Double iv2 = Double.valueOf(v2);
-                Double iv3 = Double.valueOf(v3);
-                Double iv4 = Double.valueOf(v4);
-                Double iv5 = Double.valueOf(v5);
-                Double iv6 = Double.valueOf(v6);
+                //second table
+                //Double jv1 = Double.valueOf(l1c1.getText().toString());
+                Double jv2 = Double.valueOf(l2c1.getText().toString());
+                Double jv3 = Double.valueOf(l3c1.getText().toString());
+                Double jv4 = Double.valueOf(l4c1.getText().toString());
+                Double jv5 = Double.valueOf(l5c1.getText().toString());
+                Double jv6 = Double.valueOf(l6c1.getText().toString());
+                Double jvchalcopyrite = Double.valueOf(chalcopyrite.getText().toString());
+                Double jv7 = Double.valueOf(l7c1.getText().toString());
 
                 Double res1 = (iv1 * iv3);
                 Double res2 = (iv1 * iv3 * iv2 / 100) ;
                 Double res3 = (iv3 * 1000 - res2 );
                 Double res4 = 100 * (iv5 / (iv6 * (1 - (iv4 / 100)) * (iv2 / 100) * (2205 * (iv2 / 100))));
                 Intent intent = new Intent(getActivity(), OrResult.class);
+                intent.putExtra("teneur dor", iv1);
                 intent.putExtra("res1", res1);
                 intent.putExtra("res2", res2);
                 intent.putExtra("res3", res3);
                 intent.putExtra("res4", res4);
-                startActivity(intent);
+                //check if the some of values of second table == 100%
+                if ((jv2 + jv3 + jv4 + jv5 + jv6 + jvchalcopyrite + jv7) == 100){
+                    //second table
+                    //intent.putExtra("T2res1", jv1);
+                    intent.putExtra("T2res2", jv2);
+                    intent.putExtra("T2res3", jv3);
+                    intent.putExtra("T2res4", jv4);
+                    intent.putExtra("T2res5", jv5);
+                    intent.putExtra("T2res6", jv6);
+                    intent.putExtra("T2reschalcopyrite", jvchalcopyrite);
+                    intent.putExtra("T2res7", jv7);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(getContext(), "The sum of second table's values is " +
+                            (jv2 + jv3 + jv4 + jv5 + jv6 + jvchalcopyrite + jv7) + "%",Toast.LENGTH_SHORT).show();
+                }
+
             }else{
                 Toast.makeText(getContext(), "please fill all the informations", Toast.LENGTH_SHORT).show();
             }
