@@ -566,7 +566,7 @@
                 android:layout_toEndOf="@+id/sohaib"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Etudiant ENSA - BM"
+                android:text="STUDENT ENSA - BM"
                 android:textSize="15sp"
                 android:textStyle="italic"/>
             <androidx.cardview.widget.CardView
@@ -598,7 +598,7 @@
                 android:layout_toEndOf="@+id/khalid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Etudiant ENSA - BM"
+                android:text="STUDENT ENSA - BM"
                 android:textSize="15sp"
                 android:textStyle="italic"/>
 
