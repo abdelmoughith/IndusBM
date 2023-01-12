@@ -239,19 +239,19 @@ public class OrResult extends AppCompatActivity {
         sulfates.setText(sulf + "%");
         //KHOULOUD
         if (carb > sulf) {
-            khouloud.setText("KHOULOUD YES");
+            khouloud.setText("Résultat:\nLa teneur des carbonates (comme la Dolomite et le calcite) est plus élevée que la teneur des sulfures (comme la pyrite et la chalopyrite).\nAlors les carbonates peuvent servir à la restauration des sites miniers générateurs d'acides par l'utilisation de ces derniers comme barrière d'oxygène. Donc il faut placer les sulfures en bas et puis les carbonates pour éviter le DMA.");
         } else {
-            khouloud.setText("KHOULOUD NO");
+            khouloud.setText("Résultat:\nDonc vouez devez faire la Désulfuration : pour réduire le volume des résidus ayant un potentiel de génération d'acide.\n(La désulfuration c'est une opération qui s'examine sur les rejets sulfures pour réduire la teneur des sulfures)");
         }
         //Teneur d'or..
         if (getIntent().getExtras().getDouble("teneur dor") >
                 getIntent().getExtras().getDouble("res4")) {
             // teneur d'or >>> teneur de coupure
-            conclusionTeneur.setText("Teuneur  d'or yes");
+            conclusionTeneur.setText("You are lucky:\nLa Teneur de l'OR est largement supérieur à la Teneur de Coupure :\nDanc le Projet Est RENTABLE\n---> You Could Start Extracting");
             Bitmap yesPHOTO = BitmapFactory.decodeStream(this.getResources().openRawResource(R.raw.yes));
             imageofconclusion.setImageBitmap(yesPHOTO);
         } else {
-            conclusionTeneur.setText("teeneur d'or no");
+            conclusionTeneur.setText("Unfortunately:\nLa Teneur de Coupure est largement supérieur à la Teneur de  l'OR :\nDanc le Projet Est N'est Pas RENTABLE\n---> You Couldn't Start Extracting");
             Bitmap noPHOTO = BitmapFactory.decodeStream(this.getResources().openRawResource(R.raw.no));
             imageofconclusion.setImageBitmap(noPHOTO);
         }
@@ -294,13 +294,5 @@ public class OrResult extends AppCompatActivity {
         // To animate the pie chart
         pieChart.startAnimation();
 
-    }
-
-    public static Bitmap screenShot(View view) {
-        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(),
-                view.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        view.draw(canvas);
-        return bitmap;
     }
 }

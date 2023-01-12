@@ -95,7 +95,7 @@ public class Or extends Fragment {
                 intent.putExtra("res3", res3);
                 intent.putExtra("res4", res4);
                 //check if the some of values of second table == 100%
-                if ((jv2 + jv3 + jv4 + jv5 + jv6 + jvchalcopyrite + jv7) == 100){
+                if (((jv2 + jv3 + jv4 + jv5 + jv6 + jvchalcopyrite + jv7) >= 99.5) && ((jv2 + jv3 + jv4 + jv5 + jv6 + jvchalcopyrite + jv7) <= 100.5)){
                     //second table
                     //intent.putExtra("T2res1", jv1);
                     intent.putExtra("T2res2", jv2);

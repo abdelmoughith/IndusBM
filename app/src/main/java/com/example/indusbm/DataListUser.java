@@ -100,9 +100,6 @@ public class DataListUser extends AppCompatActivity {
         });
     }
 
-    private void update(String path_in_DB, String T, String P, String V, String D, String F){
-
-    }
     private String getTime(){
         DateTimeFormatter dtf = null;
         ZonedDateTime now = null;
